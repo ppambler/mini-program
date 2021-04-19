@@ -128,3 +128,23 @@
 ```
 
 ➹：[填坑手册-小程序目录结构和组件化使用心得](https://juejin.im/post/6844903871135875079#comment)
+
+## 4、场景值是啥？
+
+![场景值](assets/img/2021-04-19-16-59-06.png)
+
+场景值用来描述用户进入小程序的路径 -> 你是从哪儿来的？
+
+➹：[场景值 - 微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/scene.html)
+
+## 5、sitemapLocation 这个配置是用来干嘛的？
+
+微信现已开放小程序内搜索，开发者可以通过 sitemap.json 配置，或者管理后台页面收录开关来配置其小程序页面是否允许微信索引。
+
+当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索词条触发该索引时，小程序的页面将可能展示在搜索结果中。
+
+> 让用户可以搜索到你的内容！
+
+➹：[微信小程序页面是否允许微信索引之sitemap.json_Handada_fan的博客-CSDN博客](https://blog.csdn.net/qq_39441438/article/details/111906852)
+
+➹：[sitemap 配置 - 微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/sitemap.html)
