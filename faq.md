@@ -143,8 +143,60 @@
 
 当开发者允许微信索引时，微信会通过爬虫的形式，为小程序的页面内容建立索引。当用户的搜索词条触发该索引时，小程序的页面将可能展示在搜索结果中。
 
-> 让用户可以搜索到你的内容！
+> 让用户可以搜索到你的内容！ -> 类似 robot.txt
 
-➹：[微信小程序页面是否允许微信索引之sitemap.json_Handada_fan的博客-CSDN博客](https://blog.csdn.net/qq_39441438/article/details/111906852)
+➹：[微信小程序页面是否允许微信索引之 sitemap.json_Handada_fan 的博客-CSDN 博客](https://blog.csdn.net/qq_39441438/article/details/111906852)
 
 ➹：[sitemap 配置 - 微信开放文档](https://developers.weixin.qq.com/miniprogram/dev/reference/configuration/sitemap.html)
+
+## 6、前后台切换？
+
+涉及到生命周期 -> 你打开了一个小程序，突然一个电话来了，那么就从前台切换到后台了……
+
+小程序进入后台的生命周期：
+
+![后台生命后期](assets/img/2021-04-22-00-24-36.png)
+
+工具栏配置：
+
+![前后台切换](assets/img/2021-04-22-00-22-23.png)
+
+## 7、小程序的生命周期？
+
+为啥要了解生命周期？ -> 因为这关系到什么时候加载数据、显示页面、缓存和恢复页面数据
+
+小程序的生命周期包括两大部分：
+
+- 小程序的生命周期 -> `App` -> 3 个钩子
+- 页面的生命周期 -> `Page` -> 5 个钩子
+
+这些钩子的描述：
+
+![钩子描述](assets/img/2021-04-22-00-36-50.png)
+
+注意某些场景下，这些钩子的调用顺序是怎样的……
+
+如：
+
+1. 首次启动小程序：`App.onLaunch --> App.onShow --> Page.onLoad --> Page.onShow --> Page.onReady`
+2. 小程序进入后台（按 Home 键/左上角✘）：`1 --> Page.onHide --> App.onHide`
+3. 小程序从后台重新打开：`2 --> App.onShow --> Page.onShow`
+4. 按返回键：
+   1. `1 --> Page.onUnload（非栈底页面）`
+   2. `1 --> Page.onHide --> App.onHide（栈底页面）`
+5. 从微信消息打开小程序（未安装小程序）：同`1`
+6. 从微信消息打开小程序（已安装小程序且在后台运行）：同`3`
+7. 从微信消息打开小程序（已安装小程序且不在后台运行）：同`1`
+8. 小程序被销毁后重新启动（进入后台一段时间后被系统销毁）：同`1`
+
+➹：[微信小程序生命周期 - 简书](https://www.jianshu.com/p/eeaee0c33424)
+
+➹：[微信小程序的生命周期总结（附图）_Seven 的博客-CSDN 博客_微信小程序的生命周期](https://blog.csdn.net/qq_35546787/article/details/107955304)
+
+➹：[监听小程序被完全销毁 - 微信开放社区](https://developers.weixin.qq.com/community/develop/doc/0000846a0d04306a0e27053f65a400)
+
+## 8、调试选项：AppData
+
+![调试选项](assets/img/2021-04-22-00-40-38.png)
+
+
