@@ -199,4 +199,13 @@
 
 ![调试选项](assets/img/2021-04-22-00-40-38.png)
 
+## 9、小程序原理？
+
+> 进程=火车，线程=车厢
+
+
+
+➹：[微信小程序原理与架构设计_Seven的博客-CSDN博客_微信小程序架构设计](https://blog.csdn.net/qq_35546787/article/details/107165143)
+
+➹：[线程和进程的区别是什么？ - biaodianfu的回答 - 知乎](https://www.zhihu.com/question/25532384/answer/411179772)
 
